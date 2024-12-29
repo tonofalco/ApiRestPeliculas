@@ -31,5 +31,20 @@ public class PeliculasWebServices {
 	public void guardar(@RequestBody Peliculas pelicula) {
 		imp.guardar(pelicula);
 	}
+	
+	@PostMapping(path ="buscar")
+	public Peliculas buscar(@RequestBody Peliculas pelicula) {
+		return imp.buscar(pelicula.getIdPeliculas());
+	}
+	
+	@PostMapping(path ="editar")
+	public void editar(@RequestBody Peliculas pelicula) {
+		imp.editar(pelicula);
+	}
+	
+	@PostMapping(path ="eliminar")
+	public void elminar(@RequestBody Peliculas pelicula) {
+		imp.eliminar(pelicula.getIdPeliculas());
+	}
 
 }

@@ -23,28 +23,28 @@ public class PeliculasServImp implements PeliculasServ {
 	}
 
 	@Override
-	public void guardar(Peliculas cliente) {
+	public void guardar(Peliculas pelicula) {
 		// TODO Auto-generated method stub
-		dao.save(cliente);
+		dao.save(pelicula);
 	}
 
 	@Transactional
 	@Override
-	public Peliculas buscar(int idCliente) {
+	public Peliculas buscar(int idPelicula) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.findById(idPelicula).orElse(null);
 	}
 
 	@Override
-	public void editar(Peliculas cliente) {
+	public void editar(Peliculas pelicula) {
 		// TODO Auto-generated method stub
-		
+		dao.save(pelicula);
 	}
 
 	@Override
-	public void eliminar(int idCliente) {
+	public void eliminar(int idPelicula) {
 		// TODO Auto-generated method stub
-		
+		dao.deleteById(idPelicula);
 	}
 
 }
